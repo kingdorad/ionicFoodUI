@@ -1,0 +1,60 @@
+<!--
+  Generated template for the ShopPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>shop</ion-title>
+    <cart></cart>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <div class="row">
+    <div class="short-info col-md-12 notouch" style="width: 100%">
+      <div class="auction-block col-sm-12" style="width: 100%">
+          <div class="elements-wrapper" style="width: 100%">
+                        <span class="auction-image-wrapper">
+                            <img class="auction-image" src="assets/imgs/f1.png" alt="Overnachten aan de boulevard van Scheveningen">
+                        </span>
+            <span class="auction-content">
+                          <span class="auction-bid col-40">
+                               <span>營業中</span></span>
+                        </span>
+            <span class="auction-time-bid">
+                            <span class="text-ios-dark">
+                               <span>某間德式料理</span></span>
+                                <!--<h4>台中市霧峰區柳豐路500號</h4>-->
+                                <span class="col-60 auction-time">
+                                    <span class="timer jsDisplayedTimeValue">
+                                      <span class="text-ios-secondary">09:00~18:00</span>
+                                    </span>
+                                </span>
+                            <!--<span class="btn btn-orange btn-outline-orange">Bekijk nu</span>-->
+            </span>
+          </div>
+      </div>
+
+      <ion-list *ngFor="let menu of menus ">
+        <ion-list-header>
+          Action
+        </ion-list-header>
+        <ion-item (click)="foodDetail()">
+          <ion-thumbnail item-end>
+            <img [src]="menu.img">
+          </ion-thumbnail>
+          <div [innerHTML]="menu.name"></div>
+          <p [innerHTML]="menu.description"></p>
+          <ion-note [innerHTML]="menu.price"></ion-note>
+        </ion-item>
+
+      </ion-list>
+    </div>
+
+  </div>
+</ion-content>

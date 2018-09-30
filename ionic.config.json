@@ -1,0 +1,7 @@
+{
+  "name": "sendFood",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     Category
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+<div *ngFor="let catagory of catagorys; let i = index; let evenRecord = even;">
+
+  <!--第0 2 4 6 8 10筆-->
+  <ion-row *ngIf="evenRecord">
+  <ion-col>
+    <div class="category">
+      <img [src]="catagory.img"/>
+    </div>
+      <div class="card-title" [innerHTML]="catagory.catagory" style="text-align: center"></div>
+  </ion-col>
+    <!--第 1 3 5 7 9筆-->
+    <ion-col *ngIf="i%2===0">
+        <div class="category">
+
+        <img [src]="catagorys[i+1].img"/>
+        </div>
+          <div class="card-title" [innerHTML]="catagorys[i+1].catagory" style="text-align: center"></div>
+    </ion-col>
+  </ion-row>
+
+
+</div>
+</ion-content>

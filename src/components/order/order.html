@@ -1,0 +1,36 @@
+<!-- Generated template for the OrderComponent component -->
+<ion-list *ngFor="let progress of progresses" >
+  <ion-list-header [innerHTML]="progress.name"></ion-list-header>
+  <ion-item >
+    <ion-row>
+      <ion-col>
+        <ol ngClass="progress">
+          <li data-step="1"  [ngClass]="{'is-active':progress.progress1}" >
+            接受訂單
+          </li>
+          <li data-step="2" [ngClass]="{'is-active':progress.progress2}">
+            餐點完成
+          </li>
+          <li data-step="3" [ngClass]="{'is-active':progress.progress3}">
+            外送員送餐
+          </li>
+          <li data-step="4" [ngClass]="{'is-active':progress.progress4,'progress_last':true}">
+            送餐完成
+          </li>
+        </ol>
+      </ion-col>
+    </ion-row>
+    <p style="color: #488aff; text-align: center" *ngIf="progress.progress3">預計抵達時間:15分鐘</p>
+    <ion-row>
+      <ion-col>
+        <p [innerHTML]="progress.foodList"></p>
+      </ion-col>
+      <ion-col>
+        <p [innerHTML]="progress.price"></p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><p [innerHTML]="progress.about"></p></ion-col>
+    </ion-row>
+  </ion-item>
+</ion-list>

@@ -1,0 +1,33 @@
+<!-- Generated template for the RestaurantComponent component -->
+<ion-card>
+</ion-card>
+<ion-card-content>
+  <p style="font-size: medium">更多餐廳</p>
+</ion-card-content>
+<div *ngFor="let restaurant of restaurants">
+    <ion-card>
+      <img [src]="restaurant.img"/>
+    </ion-card>
+    <ion-card-content>
+      <p [innerHTML]="restaurant.name"></p>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='star-outline'></ion-icon>
+          <div [innerHTML]="restaurant.star"></div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='stopwatch'></ion-icon>
+          <div [innerHTML]="restaurant.time"></div>
+        </button>
+      </ion-col>
+      <ion-col align-self-center text-center >
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name='logo-usd'></ion-icon>
+          <div [innerHTML]="restaurant.price"></div>
+        </button>
+      </ion-col>
+    </ion-card-content>
+</div>
+

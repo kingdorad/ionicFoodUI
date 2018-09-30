@@ -1,0 +1,62 @@
+custom {
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+
+  .tutorial-page {
+
+    .toolbar-background {
+      background: #fff;
+      border-color: transparent;
+    }
+
+    .slide-zoom {
+      height: 100%;
+    }
+
+    .slide-title {
+      margin-top: 2.8rem;
+    }
+
+    .foodCard {
+     height:20%;
+     width: 10%;
+      margin: 5px 0;
+    }
+
+    b {
+      font-weight: 400;
+    }
+
+    p {
+      padding: 0 40px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #60646B;
+
+      b {
+        color: #000000;
+      }
+    }
+
+  }
+}
+

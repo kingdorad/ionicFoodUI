@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      送餐狀態
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="foodOrder">
+      <ion-segment-button value="newOrder">
+       當前訂單
+      </ion-segment-button>
+      <ion-segment-button value="historyOrder">
+       送餐紀錄
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="foodOrder">
+    <div *ngSwitchCase="'newOrder'">
+<order></order>
+    </div>
+
+    <div *ngSwitchCase="'historyOrder'"  style="background-color: #f4f4f4">
+
+    <ion-list>
+    <ion-item *ngFor=" let orderHistory of orderHistorys">
+      <div style="width: 100%">
+      <ion-card-title style="color: #488aff" [innerHTML]="orderHistory.shop">
+
+      </ion-card-title>
+
+        <ion-card-content>
+          <div  [innerHTML]="orderHistory.orderList"></div>
+          <ion-row>
+            <ion-col><p [innerHTML]="orderHistory.price"></p></ion-col>
+            <ion-col><p [innerHTML]="orderHistory.time"></p></ion-col>
+          </ion-row>
+
+        </ion-card-content>
+      </div>
+    </ion-item>
+
+    </ion-list>
+    </div>
+
+
+  </div>
+</ion-content>
